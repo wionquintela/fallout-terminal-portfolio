@@ -4,7 +4,38 @@
   font-family: fallout;
   src: url("./assets/Fonts/JH_FALLOUT.TTF");
 }
+
+@keyframes tear {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-2px); }
+  50%  { transform: translateY(2px); }
+  75%  { transform: translateY(-1px); }
+  100% { transform: translateY(0); }
+}
+
+
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.05) 1px,
+    transparent 1px
+  );
+  animation: tear 0.3s infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
+
 :root {
+  text-shadow: 0 0 5px #0d4d0b, 0 0 10px #0d4d0b;
   font-family: fallout;
   line-height: 1.5;
   font-weight: 400;
@@ -13,6 +44,7 @@
   color: #199515;
   background-color: #042203;
   font-size: 15px;
+  animation: flicker 2s infinite;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

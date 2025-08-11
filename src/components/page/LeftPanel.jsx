@@ -7,7 +7,7 @@ export default function LeftPanel({done, typeEffect, setActivePanel, activePanel
   
   return (
     <>
-     <div className="w-1/2 border h-screen p-5">
+     <div className="w-full sm:w-1/2 border h-screen p-5">
         <div className="flex flex-col">
       <Separator count={25}/>
       <div className="flex flex-row"><Typewriter 
