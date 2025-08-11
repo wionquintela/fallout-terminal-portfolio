@@ -2,29 +2,22 @@ import Separator from "../Separator";
 import { Typewriter, Cursor, useTypewriter } from "react-simple-typewriter";
 import { useState } from "react";
 
-export default function Projects() {
+export default function About() {
     const [done, setDone] = useState(false);
-
-    const projects = [
+    const date = Date();
+    const sysLogs = [
         {
-            words: "STEMTask",
-            type: "To-do App",
-            status: "active",
-            link: "https://stemtaskmanagement-lake.vercel.app/"
+           text: "ACCESS DETECTED",
         }, {
-            words: "WizzySneakers",
-            type: "ecommerce",
-            status: "active",
-            link: ""
+           text: `Timestamp: ${date}`
+        },{
+           text: "Access Level: UNAUTHORIZED"
         }, {
-            words: "%sys%/Wion",
-            type: "portfolio",
-            status: "active",
-            link: "https://wionquintela-portfolio.vercel.app/"
+           text: "Terminal ID: #VAL-117"
         }
     ]
     const [subtext] = useTypewriter({
-        words: ['Establishing secure connection...', 'Sorting relevant programs...', 'Accessing /wion/info/projects'],
+        words: ['Retrieving Personnel File: Wion...', 'Decryption Key: VALID', 'File Integrity: 100%', "Displaying File..."],
         loop: 1,
         typeSpeed: 8,
         deleteSpeed: 6,
@@ -35,18 +28,26 @@ export default function Projects() {
         <div className="p-5">
             <Separator shape={"="} count={20}/>
            <div className="flex flex-row"><Typewriter
-            words={['portfolio/projectList']}
+            words={['portfolio/wion/bio']}
             loop={1}
             typeSpeed={8}
             /><Cursor cursorStyle="_"/></div>
             <Separator shape={"="} count={20}/>
             <div className="">
+                {sysLogs.map((props,index) => (
+                    <h1>&gt;&gt;<Typewriter
+                    words={[`${props.text}`]}
+                    loop={1}
+                    typeSpeed={8}
+                    /></h1>
+                ))}
                 <h1>&gt;&gt;
-                   {subtext}{!done ? (<Cursor cursorStyle="_"/>): ""}
-                    
+                   {subtext}{!done ? (<Cursor cursorStyle="_"/>): ""}</h1>
+                
+                   
                     {done && <div className="pt-5">
                         <div className="flex flex-col gap-5">
-                    {
+                    {/* {
                         projects.map((props, index) => (
                             <>
                                 <h1 id={index} className="pl-[30px]"> <Typewriter 
@@ -74,10 +75,9 @@ export default function Projects() {
                             </div></>
                         )
                         )
-                    }
+                    } */}
                     </div>
                     </div>}
-                </h1>
             </div>
         </div>
         </>

@@ -5,72 +5,127 @@ import { useState } from "react";
 export default function Skills() {
     const [done, setDone] = useState(false);
 
-    const projects = [
+    const skills = [
         {
-            words: "STEMTask",
-            type: "To-do App",
-            status: "active",
-            link: "https://stemtaskmanagement-lake.vercel.app/"
+            skill: "HTML5 Protocol",
+            status: "ONLINE"
         }, {
-            words: "WizzySneakers",
-            type: "ecommerce",
-            status: "active",
-            link: ""
+            skill: "CSS3 Styling Engine",
+            status: "STABLE"
         }, {
-            words: "%sys%/Wion",
-            type: "portfolio",
-            status: "active",
-            link: "https://wionquintela-portfolio.vercel.app/"
+            skill: "JavaScript Runtime",
+            status: "VERIFIED"
+        }, {
+            skill: "ReactJS Library",
+            status: "ACTIVE"
+        },{
+            skill: "Tailwind CSS Utility Grid",
+            status: "OPTIMIZED"
+        }, {
+            skill: "Git Version Control",
+            status: "SYNCED"
+        }, {
+            skill: "Problem Solving Module",
+            status: "FUNCTIONAL"
+        }, {
+            skill: "Communication Subroutine",
+            status: "ENGAGED"
         }
     ]
     const [subtext] = useTypewriter({
-        words: ['Displaying Project Folders...'],
+        words: ['Requesting Skillset Matrix...', 'Verifying Skills...', 'Accessing /wion/skillset/config.js'],
         loop: 1,
-        typeSpeed: 30,
-        deleteSpeed: 40,
+        typeSpeed: 8,
+        deleteSpeed: 6,
         onLoopDone: () => setDone(true)
     })
     return(
         <>
         <div className="p-5">
-            <Separator count={10}/>
+            <Separator shape={"="} count={10}/>
            <div className="flex flex-row"><Typewriter
             words={['portfolio/adminSkills']}
             loop={1}
-            typeSpeed={30}
+            typeSpeed={8}
             /><Cursor cursorStyle="_"/></div>
-            <Separator count={10}/>
+            <Separator shape={"="} count={10}/>
             <div className="">
                 <h1>&gt;&gt;
                    {subtext}{!done ? (<Cursor cursorStyle="_"/>): ""}
 
                     {done && <div className="pt-3">
-                        <div className="flex flex-col gap-5">
+                        <div className="pl-2 flex flex-col gap-5">
+                        <Typewriter 
+                        words={['[LOG ENTRY #019]']}
+                        loop={1}
+                        typeSpeed={10}
+                        />
                     {
-                        projects.map((props, index) => (
-                            <>
-                                <h1 id={index} className="pl-[30px]"> <Typewriter 
-                                words={[`==> Project no. [${index + 1}.]: ${props.words}`]}
-                                loop={1}
-                                typeSpeed={30}
-                            />{!done ? (<Cursor cursorStyle="_"/>): ""}</h1>
-                            <div className="pl-[150px] flex flex-col">
-                                <span><Typewriter 
-                                words={[`>type: ${props.type}`]}
-                                loop={1}
-                                typeSpeed={30}
-                            /></span>
-                            <span><Typewriter 
-                                words={[`>status: ${props.status}`]}
-                                loop={1}
-                                typeSpeed={30}
-                            /></span>
-                            <span>&gt;<a href={props.link} target="_blank" className=" hover:scale-102 underline">RUN {props.words}.exe</a></span>
-                            
-                            </div></>
-                        )
+                        skills.map((props, index) => {
+                        //     const skillLength = props.skill.length;
+                        //     const statsLength = props.status.length;
+                        //     const length = statsLength - skillLength;
+                        //    const separatorCount = Math.max(0, 10 - length);
+
+                            return (<div className="pl-10 flex flex-row">
+                                <span className="flex flex-row">
+                                    <Typewriter 
+                                        words={[`>${props.skill}`]}
+                                        loop={1}
+                                        typeSpeed={30}
+                                    /><Separator shape={"."} count={20}/>{!done ? <Cursor cursorStyle="_"/> : ""}
+                                </span>
+                                <span className="">
+                                    <Typewriter 
+                                        words={[`${props.status}`]}
+                                        loop={1}
+                                        typeSpeed={30}
+                                    />{!done ? <Cursor cursorStyle="_"/> : ""}
+                                </span>
+                            </div>)
+                            }
                         )
                     }
+
+                    <div className="flex flex-col">
+                        <Typewriter 
+                        words={['[STATUS]']}
+                        loop={1}
+                        typeSpeed={10}
+                        />
+                        <div className="flex flex-row pl-10 pt-4 gap-2">
+                            <span>
+                            <Typewriter 
+                        words={['>Developer Readiness: ']}
+                        loop={1}
+                        typeSpeed={10}
+                        />
+                        </span>
+                        <span>
+                            <Typewriter 
+                        words={['96%']}
+                        loop={1}
+                        typeSpeed={10}
+                        />
+                        </span>
+                        </div>
+                        <div className="flex flex-row pl-10 gap-2">
+                            <span>
+                            <Typewriter 
+                        words={['>Growth Trajectory: ']}
+                        loop={1}
+                        typeSpeed={10}
+                        />
+                        </span>
+                        <span className="animate-pulse">
+                            <Typewriter 
+                        words={['POSITIVE']}
+                        loop={1}
+                        typeSpeed={10}
+                        />
+                        </span>
+                        </div>
+                    </div>
                     </div>
                     </div>}
                 </h1>

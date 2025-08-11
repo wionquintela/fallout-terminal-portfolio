@@ -42,7 +42,8 @@ body::after {
 
   color-scheme: light dark;
   color: #199515;
-  background-color: #042203;
+  /* background-color: #042203; */
+  background-color: black;
   font-size: 15px;
   animation: flicker 2s infinite;
 

@@ -8,7 +8,7 @@ function App() {
   const [done, setDone] = useState(false);
   const [activePanel, setActivePanel] = useState("");
   const [typeEffect] = useTypewriter({
-    words: ['Initializing user interface...', 'Establishing secure connection...', 'Decrypting assets ██████████ 100%','Accessing Portfolio...', "Granted.. Welcome to my Domain :-)"],
+    words: ['Initializing user interface...', 'Establishing secure connection...', 'Decrypting assets ██████████ 100%','Accessing Portfolio...', "Granted.. Welcome to the website :-)"],
     loop: 1,
     typeSpeed: 6,
     deleteSpeed: 3,
@@ -19,7 +19,7 @@ function App() {
     <>
     <div className="flex flex-col sm:flex-row">
       <LeftPanel done={done} typeEffect={typeEffect} activePanel={activePanel} setActivePanel={setActivePanel}/>
-      <RightPanel activePanel={activePanel}/>
+      <RightPanel done={done} activePanel={activePanel}/>
     </div>
     </>
   )

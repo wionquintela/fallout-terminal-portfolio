@@ -1,7 +1,7 @@
-export default function Separator({count}) {
+export default function Separator({shape, count}) {
     return(
         <>
-        <h1>{'='.repeat(count)}</h1>      
+        <h1>{`${shape}`.repeat(count)}</h1>      
         </>
     )
 }
