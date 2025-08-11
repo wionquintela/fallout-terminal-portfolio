@@ -13,10 +13,11 @@ export default function LeftPanel({done, typeEffect, setActivePanel, activePanel
       <div className="flex flex-row"><Typewriter 
       words={["Welcome to WIONCo Terminal (TM)"]}
       loop={1}
+      typeSpeed={30}
       /><Cursor cursorStyle="_" /></div>
       <Separator count={25}/>
       
-      <h1 className="pt-2 pb-2 flex flex-row">&gt;&gt;{typeEffect}<Cursor cursorStyle="_" /></h1>
+      <h1 className="pt-2 pb-2 flex flex-row">&gt;&gt;{typeEffect}{!done ? (<Cursor cursorStyle="_"/>): ""}</h1>
 
       {done && (<>
       <AnimatedList setActivePanel={setActivePanel} activePanel={activePanel}/>

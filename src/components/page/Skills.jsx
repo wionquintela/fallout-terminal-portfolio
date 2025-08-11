@@ -2,7 +2,7 @@ import Separator from "../Separator";
 import { Typewriter, Cursor, useTypewriter } from "react-simple-typewriter";
 import { useState } from "react";
 
-export default function Projects() {
+export default function Skills() {
     const [done, setDone] = useState(false);
 
     const projects = [
@@ -35,7 +35,7 @@ export default function Projects() {
         <div className="p-5">
             <Separator count={10}/>
            <div className="flex flex-row"><Typewriter
-            words={['portfolio/projectList']}
+            words={['portfolio/adminSkills']}
             loop={1}
             typeSpeed={30}
             /><Cursor cursorStyle="_"/></div>
@@ -59,13 +59,13 @@ export default function Projects() {
                                 words={[`>type: ${props.type}`]}
                                 loop={1}
                                 typeSpeed={30}
-                            />{!done ? (<Cursor cursorStyle="_"/>): ""}</span>
+                            /></span>
                             <span><Typewriter 
                                 words={[`>status: ${props.status}`]}
                                 loop={1}
                                 typeSpeed={30}
-                            />{!done ? (<Cursor cursorStyle="_"/>): ""}</span>
-                            <span>&gt;<a href={props.link} target="_blank" className=" hover:scale-102 underline">RUN {props.words}.exe</a><Cursor cursorStyle="_"/></span>
+                            /></span>
+                            <span>&gt;<a href={props.link} target="_blank" className=" hover:scale-102 underline">RUN {props.words}.exe</a></span>
                             
                             </div></>
                         )

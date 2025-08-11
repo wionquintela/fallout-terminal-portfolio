@@ -8,10 +8,10 @@ function App() {
   const [done, setDone] = useState(false);
   const [activePanel, setActivePanel] = useState("");
   const [typeEffect] = useTypewriter({
-    words: ['Loading Portfolio...', 'Now Showing Portfolio'],
+    words: ['Initializing user interface...', 'Accessing Portfolio...'],
     loop: 1,
-    typeSpeed: 100,
-    deleteSpeed: 40,
+    typeSpeed: 30,
+    deleteSpeed: 20,
     onLoopDone: () => setDone(true)
     
   })

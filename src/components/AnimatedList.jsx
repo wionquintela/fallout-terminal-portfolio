@@ -7,19 +7,19 @@ export default function AnimatedList({activePanel, setActivePanel}) {
     const [listOne] = useTypewriter({
     words: ['[1.] Projects'],
     loop: 1,
-    typeSpeed: 100,
+    typeSpeed: 30,
     deleteSpeed: 40,    
   })
   const [listTwo] = useTypewriter({
     words: ['[2.] Skills'],
     loop: 1,
-    typeSpeed: 100,
+    typeSpeed: 30,
     deleteSpeed: 40,    
   })
   const [listThree] = useTypewriter({
     words: ['[3.] About'],
     loop: 1,
-    typeSpeed: 100,
+    typeSpeed: 30,
     deleteSpeed: 40,   
     onLoopDone: () => setDone(true) 
   })
@@ -29,11 +29,12 @@ export default function AnimatedList({activePanel, setActivePanel}) {
             <div className="flex flex-row"><Typewriter 
             words={['>>SELECT FROM THE OPTIONS']}
             loop={1}
-            typeSpeed={100} /> <Cursor cursorStyle="_" /></div>
+            typeSpeed={30} /> {!done ? (<Cursor cursorStyle="_"/>): ""}</div>
             <div className="p-2 flex flex-col gap-2">
-            <a className={`cursor-pointer  hover:scale-102 ${activePanel === "projects" ? "underline" : ""}`} onClick={() => setActivePanel("projects")}>{listOne}<Cursor cursorStyle="_" /></a>
-            <a className={`cursor-pointer  hover:scale-102 ${activePanel === "skills" ? "underline" : ""}`} onClick={() => setActivePanel("skills")}>{listTwo}<Cursor cursorStyle="_" /></a>
-            <a className={`cursor-pointer  hover:scale-102 ${activePanel === "about" ? "underline" : ""}`} onClick={() => setActivePanel("about")}>{listThree}<Cursor cursorStyle="_" /></a>
+            <a className={`cursor-pointer  hover:scale-102 ${activePanel === "projects" ? "underline" : ""} ${activePanel === "projects" ? "scale-102" : ""}`} 
+            onClick={() => setActivePanel("projects")}>{listOne}{!done ? (<Cursor cursorStyle="_"/>): ""}</a>
+            <a className={`cursor-pointer  hover:scale-102 ${activePanel === "skills" ? "underline" : ""} ${activePanel === "skills" ? "scale-102" : ""}`} onClick={() => setActivePanel("skills")}>{listTwo}{!done ? (<Cursor cursorStyle="_"/>): ""}</a>
+            <a className={`cursor-pointer  hover:scale-102 ${activePanel === "about" ? "underline" : ""} ${activePanel === "about" ? "scale-102" : ""} `} onClick={() => setActivePanel("about")}>{listThree}{!done ? (<Cursor cursorStyle="_"/>): ""}</a>
             </div>
         </div>
         </>
