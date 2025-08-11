@@ -7,13 +7,13 @@ export default function About() {
     const date = Date();
     const sysLogs = [
         {
-           text: "ACCESS DETECTED",
+           text: "UNAUTHORIZED ACCESS DETECTED",
         }, {
            text: `Timestamp: ${date}`
         },{
-           text: "Access Level: UNAUTHORIZED"
+           text: "IP Address: 1.***.*9.45*.*"
         }, {
-           text: "Terminal ID: #VAL-117"
+           text: "This session is being monitored by the Enclave (TM)"
         }
     ]
     const [subtext] = useTypewriter({

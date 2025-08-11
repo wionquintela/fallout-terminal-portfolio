@@ -35,6 +35,7 @@ export default function AnimatedList({activePanel, setActivePanel}) {
             onClick={() => setActivePanel("projects")}>{listOne}{!done ? (<Cursor cursorStyle="_"/>): ""}</a>
             <a className={`cursor-pointer  hover:scale-102 ${activePanel === "skills" ? "underline" : ""} ${activePanel === "skills" ? "scale-102" : ""}`} onClick={() => setActivePanel("skills")}>{listTwo}{!done ? (<Cursor cursorStyle="_"/>): ""}</a>
             <a className={`cursor-pointer  hover:scale-102 ${activePanel === "about" ? "underline" : ""} ${activePanel === "about" ? "scale-102" : ""} `} onClick={() => setActivePanel("about")}>{listThree}{!done ? (<Cursor cursorStyle="_"/>): ""}</a>
+            <a className={`cursor-pointer  hover:scale-102 ${activePanel === "" ? "underline" : ""} ${activePanel === "" ? "scale-102" : ""} `} onClick={() => setActivePanel("")}>[4] root{!done ? (<Cursor cursorStyle="_"/>): ""}</a>
             </div>
         </div>
         </>
