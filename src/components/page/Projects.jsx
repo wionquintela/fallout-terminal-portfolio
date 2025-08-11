@@ -33,13 +33,13 @@ export default function Projects() {
     return(
         <>
         <div className="p-5">
-            <Separator count={10}/>
+            <Separator count={20}/>
            <div className="flex flex-row"><Typewriter
             words={['portfolio/projectList']}
             loop={1}
             typeSpeed={30}
             /><Cursor cursorStyle="_"/></div>
-            <Separator count={10}/>
+            <Separator count={20}/>
             <div className="">
                 <h1>&gt;&gt;
                    {subtext}{!done ? (<Cursor cursorStyle="_"/>): ""}

@@ -13,7 +13,7 @@ export default function LeftPanel({done, typeEffect, setActivePanel, activePanel
       <div className="flex flex-row"><Typewriter 
       words={["Welcome to WIONCo Terminal (TM)"]}
       loop={1}
-      typeSpeed={30}
+      typeSpeed={5}
       /><Cursor cursorStyle="_" /></div>
       <Separator count={25}/>
       
