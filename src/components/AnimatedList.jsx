@@ -27,7 +27,7 @@ export default function AnimatedList({activePanel, setActivePanel}) {
         <>
         <div className="pt-5 flex flex-col gap-2">
             <div className="flex flex-row"><Typewriter 
-            words={['>>SELECT FROM THE OPTIONS']}
+            words={['>>SELECT FROM THE OPTIONS:']}
             loop={1}
             typeSpeed={30} /> {!done ? (<Cursor cursorStyle="_"/>): ""}</div>
             <div className="p-2 flex flex-col gap-2">

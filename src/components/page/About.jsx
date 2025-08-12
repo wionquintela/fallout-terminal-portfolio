@@ -21,9 +21,15 @@ export default function About() {
     const date = Date();
     const sysLogs = [
         {
-           text: "NAME: WION QUINTELA",
+           text: "Designated ID: #VX-4306 WION QUINTELA",
         }, {
-           text: `ROLE: FRONTEND DEVELOPER`
+           text: `Structural Elevation: 170cm/5'7"`,
+        }, {
+           text: "Mass Ratio: 67kg/147lbs",
+        },  {
+           text: "Life Cycle Index: 19 Years",
+        },   {
+           text: `Function Protocol: FRONTEND DEVELOPER/College Student`
         },{
            text: `STATUS: ACTIVE`
         }, {
