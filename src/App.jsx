@@ -17,7 +17,7 @@ function App() {
   })
   return (
     <>
-    <div className="flex flex-col sm:flex-row">
+    <div className="grid grid-cols-2 divide-x-4">
       <LeftPanel done={done} typeEffect={typeEffect} activePanel={activePanel} setActivePanel={setActivePanel}/>
       <RightPanel done={done} activePanel={activePanel}/>
     </div>

@@ -4,25 +4,62 @@ import { useState } from "react";
 
 export default function About() {
     const [done, setDone] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const [shownText, setShownText] = useState("");
+    // const handleOnMouseEnter = () => setIsHovered(true);
+    // const handleOnMouseLeave = () => setIsHovered(false);
+    function handleOnMouseEnter(text) {
+        setIsHovered(true);
+        setShownText(text);
+        
+    }
+
+    function handleOnMouseLeave() {
+        setIsHovered(false);
+    }
+
     const date = Date();
     const sysLogs = [
         {
-           text: "UNAUTHORIZED ACCESS DETECTED",
+           text: "NAME: WION QUINTELA",
         }, {
-           text: `Timestamp: ${date}`
+           text: `ROLE: FRONTEND DEVELOPER`
         },{
-           text: "IP Address: 1.***.*9.45*.*"
+           text: `STATUS: ACTIVE`
         }, {
-           text: "This session is being monitored by the Enclave (TM)"
+           text: "LOCATION: [REDACTED]"
         }
     ]
     const [subtext] = useTypewriter({
-        words: ['Retrieving Personnel File: Wion...', 'Decryption Key: VALID', 'File Integrity: 100%', "Displaying File..."],
+        words: ['Retrieving Personnel File: Wion...', 'Decryption Key: VALID', 'File Integrity: 100%', "Displaying Biometrics..."],
         loop: 1,
         typeSpeed: 8,
         deleteSpeed: 6,
         onLoopDone: () => setDone(true)
     })
+
+    const bio = [{
+        words: "Strength",
+        value: "9/10"
+    },{
+        words: "Perception",
+        value: "7/10"
+    }, {
+        words: "Endurance",
+        value: "7/10"
+    }, {
+        words: "Charisma",
+        value: "3/10"
+    }, {
+        words: "Intelligence",
+        value: "6/10"
+    }, {
+        words: "Agility",
+        value: "7/10"
+    }, {
+        words: "Luck",
+        value: "10/10"
+    }]
     return(
         <>
         <div className="p-5">
@@ -35,7 +72,7 @@ export default function About() {
             <Separator shape={"="} count={20}/>
             <div className="">
                 {sysLogs.map((props,index) => (
-                    <h1>&gt;&gt;<Typewriter
+                    <h1 key={index}>&gt;&gt;<Typewriter
                     words={[`${props.text}`]}
                     loop={1}
                     typeSpeed={8}
@@ -47,36 +84,38 @@ export default function About() {
                    
                     {done && <div className="pt-5">
                         <div className="flex flex-col gap-5">
-                    {/* {
-                        projects.map((props, index) => (
-                            <>
-                                <h1 id={index} className="pl-[30px]"> <Typewriter 
-                                words={[`==> Project no. [${index + 1}.]: ${props.words}`]}
-                                loop={1}
-                                typeSpeed={30}
-                            />{!done ? (<Cursor cursorStyle="_"/>): ""}</h1>
-                            <div className="pl-[150px] flex flex-col">
-                                <span><Typewriter 
-                                words={[`>type: ${props.type}`]}
-                                loop={1}
-                                typeSpeed={30}
-                            />{!done ? (<Cursor cursorStyle="_"/>): ""}</span>
-                            <span><Typewriter 
-                                words={[`>status: ${props.status}`]}
-                                loop={1}
-                                typeSpeed={30}
-                            />{!done ? (<Cursor cursorStyle="_"/>): ""}</span>
-                            <span>&gt;<a href={props.link} target="_blank" className=" hover:scale-102 underline"><Typewriter 
-                                words={[`Run ${props.words}.exe`]}
-                                loop={1}
-                                typeSpeed={30}
-                            /></a><Cursor cursorStyle="_"/></span>
-                            
-                            </div></>
-                        )
-                        )
-                    } */}
-                    </div>
+                        <span className=" flex flex-row">
+                            <span className="animate-pulse pr-1">
+                                <Typewriter words={['S.P.E.C.I.A.L']} loop={1} typeSpeed={40} deleteSpeed={35} />
+                            </span>
+                            <Typewriter words={['Stats']} loop={1} typeSpeed={40} deleteSpeed={35} />
+                        </span>
+                        <div className="flex flex-row flex-wrap">
+                    <div className="w-full sm:w-1/2">
+                    {
+                        bio.map((props, index) => (
+                              <div className="pl-5 flex flex-col gap-5" key={index}>
+                                <div  className=""  onMouseEnter={() => handleOnMouseEnter(props.words)} onMouseLeave={ handleOnMouseLeave}>
+                             <span className=""><Typewriter 
+                                    words={[`>${props.words}`]}
+                                    loop={1} typeSpeed={40} deleteSpeed={35}
+                                    /></span>..........<Typewriter words={[`${props.value}`]}
+                                    loop={1} typeSpeed={40} deleteSpeed={35}/> 
+                             </div>
+                              </div>
+                                   
+                                
+                        ))
+                    }</div>   
+                    {/* <Typewriter 
+                    words={[`>${shownText}`]}
+                    typeSpeed={6}
+                    deleteSpeed={1}
+                    delaySpeed={0}
+                    loop={1}
+                    />     */}
+                    <div className="w-full sm:w-1/2 text-center">{isHovered ? (`${shownText}`): 'not hovering anything'}</div>
+                    </div></div>
                     </div>}
             </div>
         </div>
