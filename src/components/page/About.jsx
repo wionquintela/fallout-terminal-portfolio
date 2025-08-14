@@ -6,11 +6,13 @@ export default function About() {
     const [done, setDone] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [shownText, setShownText] = useState("");
+    const [shownValue, setShownValue] = useState("");
     // const handleOnMouseEnter = () => setIsHovered(true);
     // const handleOnMouseLeave = () => setIsHovered(false);
-    function handleOnMouseEnter(text) {
+    function handleOnMouseEnter(text, value) {
         setIsHovered(true);
         setShownText(text);
+        setShownValue(value);
         
     }
 
@@ -18,7 +20,6 @@ export default function About() {
         setIsHovered(false);
     }
 
-    const date = Date();
     const sysLogs = [
         {
            text: "Designated ID: #VX-4306 WION QUINTELA",
@@ -101,7 +102,7 @@ export default function About() {
                     {
                         bio.map((props, index) => (
                               <div className="pl-5 flex flex-col gap-5" key={index}>
-                                <div  className=""  onMouseEnter={() => handleOnMouseEnter(props.words)} onMouseLeave={ handleOnMouseLeave}>
+                                <div  className=""  onMouseEnter={() => handleOnMouseEnter(props.words, props.value)} onMouseLeave={ handleOnMouseLeave}>
                              <span className=""><Typewriter 
                                     words={[`>${props.words}`]}
                                     loop={1} typeSpeed={40} deleteSpeed={35}
@@ -120,7 +121,7 @@ export default function About() {
                     delaySpeed={0}
                     loop={1}
                     />     */}
-                    <div className="w-full sm:w-1/2 text-center">{isHovered ? (`${shownText}`): 'not hovering anything'}</div>
+                    <div className="w-full sm:w-1/2 text-center flex justify-center items-center">{isHovered ? (`${shownText} is ${shownValue}`): 'not hovering anything'}</div>
                     </div></div>
                     </div>}
             </div>

@@ -10,8 +10,8 @@ function App() {
   const [typeEffect] = useTypewriter({
     words: ['Initializing user interface...', 'Establishing secure connection...', 'Decrypting assets ██████████ 100%','Accessing Portfolio...', "Granted.. Welcome to the website :-)"],
     loop: 1,
-    typeSpeed: 6,
-    deleteSpeed: 3,
+    typeSpeed: 4,
+    deleteSpeed: 1,
     onLoopDone: () => setDone(true)
     
   })
