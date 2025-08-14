@@ -42,13 +42,13 @@ export default function Skills() {
     return(
         <>
         <div className="p-5">
-            <Separator shape={"="} count={10}/>
+            <Separator shape={"="} count={20}/>
            <div className="flex flex-row"><Typewriter
             words={['portfolio/adminSkills']}
             loop={1}
             typeSpeed={8}
             /><Cursor cursorStyle="_"/></div>
-            <Separator shape={"="} count={10}/>
+            <Separator shape={"="} count={20}/>
             <div className="">
                 <h1>&gt;&gt;
                    {subtext}{!done ? (<Cursor cursorStyle="_"/>): ""}

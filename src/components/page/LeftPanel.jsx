@@ -9,13 +9,13 @@ export default function LeftPanel({done, typeEffect, setActivePanel, activePanel
     <>
      <div className="col-span-2 sm:col-span-1  sm:h-screen p-5">
         <div className="flex flex-col">
-      <Separator shape={"="} count={25}/>
+      <Separator shape={"="} count={35}/>
       <div className="flex flex-row"><Typewriter 
-      words={["Welcome to WIONCo Terminal (TM)"]}
+      words={["Welcome to WIONCo Terminal (TM) @ 2025"]}
       loop={1}
       typeSpeed={5}
       /></div>
-      <Separator shape={"="} count={25}/>
+      <Separator shape={"="} count={35}/>
        <Typewriter 
         words={[`SESSION: ${Date()}`]}
         loop={1}
