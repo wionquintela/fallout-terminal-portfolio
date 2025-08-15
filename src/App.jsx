@@ -1,6 +1,6 @@
 import { useTypewriter, Typewriter, Cursor } from 'react-simple-typewriter';
 import { act, useState } from "react";
-import LeftPanel from './components/page/leftPanel';
+import LeftPanel from './components/page/LeftPanel';
 import RightPanel from './components/page/RightPanel';
 
 
